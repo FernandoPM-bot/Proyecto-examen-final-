@@ -58,3 +58,35 @@ nav a{
     color: black;
     margin: 15px;
 }
+table{
+    width: 100%;
+    border-collapse: collapse;
+    margin: 14px 0 20px;
+    background: var(--white);
+    border-radius: var(--radius);
+    overflow: hidden;
+    box-shadow: var(--shadow);
+    font-size: 0.95rem;
+}
+
+table[border] {border: none;}
+
+thead tr,
+tr:first-child th{
+    background: var(--navy);
+    color: var(--white);
+}
+
+th{
+    font-weight: 600;
+    text-align: left;
+    padding: 11px 14px;
+    font-size: 0.9rem;
+    letter-spacing: 0.02em;
+}
+
+td {
+    padding: 10px 14px;
+    border-bottom: 1px solid var(--gray-200);
+    vertical-align: top;
+}
