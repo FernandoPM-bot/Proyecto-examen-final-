@@ -13,6 +13,7 @@
 </header>
 
    <nav>
+    <a href="Contactame.html">Contactame</a>
         <a href="Proyecto-Desarrollo-Humano.html">Proyecto Desarrollo Humano</a>
     <a href="Proyecto-logica-de-sistemas.html">Proyecto de lógica de Sistemas</a>
     <a href="Proyecto-ContabilidadI.html">Proyecto de Proyecto Contabilidad I</a>
@@ -78,75 +79,117 @@
                 <td>Individual</td>
             </tr>
             <table>
-<!-- ======= FORMULARIO DE CONTACTO ======= -->
-<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+        <form id="formContacto" novalidate>
 
-<h2>Contáctame</h2>
-<form id="contactForm" style="max-width:450px; margin:1rem auto; text-align:left;">
-    <label for="from_name">Nombre:</label><br>
-    <input type="text" id="from_name" name="from_name" placeholder="Tu nombre" required
-        style="width:100%; padding:8px; margin:4px 0 12px 0; border:1px solid #ccc; border-radius:4px;"><br>
+            <!-- SECCIÓN: Datos personales -->
+            <p class="seccion-titulo">Datos del remitente</p>
 
-    <label for="from_email">Correo electrónico:</label><br>
-    <input type="email" id="from_email" name="from_email" placeholder="tu@correo.com" required
-        style="width:100%; padding:8px; margin:4px 0 12px 0; border:1px solid #ccc; border-radius:4px;"><br>
+            <div class="fila-dos">
+                <div class="campo">
+                    <label for="nombre">Nombre <span class="req">*</span></label>
+                    <input
+                        type="text"
+                        id="nombre"
+                        name="nombre"
+                        placeholder="Tu nombre"
+                        maxlength="60"
+                        autocomplete="given-name"
+                    >
+                    <span class="error-msg" id="err-nombre">Por favor ingresa tu nombre.</span>
+                </div>
 
-    <label for="subject">Asunto:</label><br>
-    <input type="text" id="subject" name="subject" placeholder="Asunto del mensaje" required
-        style="width:100%; padding:8px; margin:4px 0 12px 0; border:1px solid #ccc; border-radius:4px;"><br>
+                <div class="campo">
+                    <label for="apellido">Apellido <span class="req">*</span></label>
+                    <input
+                        type="text"
+                        id="apellido"
+                        name="apellido"
+                        placeholder="Tu apellido"
+                        maxlength="60"
+                        autocomplete="family-name"
+                    >
+                    <span class="error-msg" id="err-apellido">Por favor ingresa tu apellido.</span>
+                </div>
+            </div>
 
-    <label for="message">Mensaje:</label><br>
-    <textarea id="message" name="message" placeholder="Escribe tu mensaje..." required
-        style="width:100%; padding:8px; margin:4px 0 12px 0; border:1px solid #ccc; border-radius:4px; height:120px; resize:vertical;"></textarea><br>
+            <div class="fila-dos">
+                <div class="campo">
+                    <label for="correo">Correo electrónico <span class="req">*</span></label>
+                    <input
+                        type="email"
+                        id="correo"
+                        name="correo"
+                        placeholder="ejemplo@correo.com"
+                        autocomplete="email"
+                    >
+                    <span class="error-msg" id="err-correo">Ingresa un correo válido.</span>
+                </div>
 
-    <button type="submit" id="sendBtn"
-        style="background:#333; color:#fff; padding:10px 24px; border:none; border-radius:4px; cursor:pointer; font-size:1rem;">
-        Enviar mensaje
-    </button>
+                <div class="campo">
+                    <label for="telefono">Teléfono (opcional)</label>
+                    <input
+                        type="tel"
+                        id="telefono"
+                        name="telefono"
+                        placeholder="+502 0000-0000"
+                        autocomplete="tel"
+                    >
+                </div>
+            </div>
 
-    <p id="msgSuccess" style="display:none; color:green; margin-top:10px;">✅ ¡Mensaje enviado con éxito!</p>
-    <p id="msgError"   style="display:none; color:red;   margin-top:10px;">❌ Error al enviar. Intenta de nuevo.</p>
-</form>
+            <hr class="divider">
 
-<script>
-    // ============================================================
-    // REEMPLAZA ESTOS 3 VALORES CON LOS TUYOS DE EMAILJS.COM
-    // ============================================================
-    const EMAILJS_PUBLIC_KEY  = "9JuSHfVoZDAztK9xW";
-    const EMAILJS_SERVICE_ID  = "FerPor-19";
-    const EMAILJS_TEMPLATE_ID = "template_6indltc";
-    // ============================================================
+            <!-- SECCIÓN: Mensaje -->
+            <p class="seccion-titulo">Tu mensaje</p>
 
-    emailjs.init(EMAILJS_PUBLIC_KEY);
+            <div class="campo">
+                <label for="asunto">Asunto <span class="req">*</span></label>
+                <select id="asunto" name="asunto">
+                    <option value="">-- Selecciona un asunto --</option>
+                    <option value="proyecto">Propuesta de proyecto</option>
+                    <option value="colaboracion">Colaboración académica</option>
+                    <option value="consulta">Consulta general</option>
+                    <option value="otro">Otro</option>
+                </select>
+                <span class="error-msg" id="err-asunto">Por favor selecciona un asunto.</span>
+            </div>
 
-    document.getElementById("contactForm").addEventListener("submit", async function(e) {
-        e.preventDefault();
-        const btn = document.getElementById("sendBtn");
-        document.getElementById("msgSuccess").style.display = "none";
-        document.getElementById("msgError").style.display   = "none";
-        btn.disabled = true;
-        btn.textContent = "Enviando...";
+            <div class="campo">
+                <label for="mensaje">Mensaje <span class="req">*</span></label>
+                <textarea
+                    id="mensaje"
+                    name="mensaje"
+                    placeholder="Escribe tu mensaje aquí..."
+                    maxlength="1000"
+                ></textarea>
+                <span class="error-msg" id="err-mensaje">El mensaje no puede estar vacío.</span>
+            </div>
 
-        try {
-            await emailjs.send(EMAILJS_SERVICE_ID, EMAILJS_TEMPLATE_ID, {
-                from_name:  document.getElementById("from_name").value,
-                from_email: document.getElementById("from_email").value,
-                subject:    document.getElementById("subject").value,
-                message:    document.getElementById("message").value
-            });
-            document.getElementById("msgSuccess").style.display = "block";
-            this.reset();
-        } catch(err) {
-            document.getElementById("msgError").style.display = "block";
-        } finally {
-            btn.disabled = false;
-            btn.textContent = "Enviar mensaje";
-        }
-    });
-</script>
-<!-- ======= FIN FORMULARIO ======= -->
+            <!-- Checkbox de autorización -->
+            <div class="campo-check">
+                <input type="checkbox" id="autorizo" name="autorizo">
+                <label for="autorizo">
+                    Autorizo el uso de mis datos de contacto únicamente para recibir respuesta a este mensaje.
+                </label>
+            </div>
+
+            <!-- Botones -->
+            <div class="acciones">
+                <button type="submit" class="btn-enviar">&#9993; Enviar mensaje</button>
+                <button type="reset" class="btn-limpiar" onclick="limpiarFormulario()">&#10006; Limpiar</button>
+            </div>
+
+        </form>
+
             </table>
- 
+
+<div id="contacto">
+    <h4> Contacto</h4>
+    <a href="mailto: fportillom1@miumg.edu.gt" class="boton"> Gmail</a>
+    <a href="tel: +50241677779" class="boton"> Télefono</a>
+
+</div>
+
 <footer style="background:#333; color:white; text-align:center; padding:15px; margin-top:30px;">
     <p>&copy; 2026 Fernando Baudilio Alexander Portillo Méndez | Todos los derechos reservados</p>
 </footer>
