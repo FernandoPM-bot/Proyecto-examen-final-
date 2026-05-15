@@ -78,107 +78,95 @@
                 <td>Individual</td>
             </tr>
             <table>
-        <form id="formContacto" novalidate>
+<form action="mailto:fportillom1@miumg.edu.gt" method="post" enctype="text/plain">
 
-            <!-- SECCIÓN: Datos personales -->
-            <p class="seccion-titulo">Datos del remitente</p>
+    <!-- SECCIÓN: Datos personales -->
+    <p class="seccion-titulo">Datos del remitente</p>
 
-            <div class="fila-dos">
-                <div class="campo">
-                    <label for="nombre">Nombre <span class="req">*</span></label>
-                    <input
-                        type="text"
-                        id="nombre"
-                        name="nombre"
-                        placeholder="Tu nombre"
-                        maxlength="60"
-                        autocomplete="given-name"
-                    >
-                    <span class="error-msg" id="err-nombre">Por favor ingresa tu nombre.</span>
-                </div>
+    <div class="fila-dos">
+        <div class="campo">
+            <label for="nombre">Nombre <span class="req">*</span></label>
+            <input
+                type="text"
+                id="nombre"
+                name="Nombre"
+                placeholder="Tu nombre"
+                maxlength="60"
+            >
+        </div>
 
-                <div class="campo">
-                    <label for="apellido">Apellido <span class="req">*</span></label>
-                    <input
-                        type="text"
-                        id="apellido"
-                        name="apellido"
-                        placeholder="Tu apellido"
-                        maxlength="60"
-                        autocomplete="family-name"
-                    >
-                    <span class="error-msg" id="err-apellido">Por favor ingresa tu apellido.</span>
-                </div>
-            </div>
+        <div class="campo">
+            <label for="apellido">Apellido <span class="req">*</span></label>
+            <input
+                type="text"
+                id="apellido"
+                name="Apellido"
+                placeholder="Tu apellido"
+                maxlength="60"
+            >
+        </div>
+    </div>
 
-            <div class="fila-dos">
-                <div class="campo">
-                    <label for="correo">Correo electrónico <span class="req">*</span></label>
-                    <input
-                        type="email"
-                        id="correo"
-                        name="correo"
-                        placeholder="ejemplo@correo.com"
-                        autocomplete="email"
-                    >
-                    <span class="error-msg" id="err-correo">Ingresa un correo válido.</span>
-                </div>
+    <div class="fila-dos">
+        <div class="campo">
+            <label for="correo">Correo electrónico <span class="req">*</span></label>
+            <input
+                type="email"
+                id="correo"
+                name="Correo"
+                placeholder="ejemplo@correo.com"
+            >
+        </div>
 
-                <div class="campo">
-                    <label for="telefono">Teléfono (opcional)</label>
-                    <input
-                        type="tel"
-                        id="telefono"
-                        name="telefono"
-                        placeholder="+502 0000-0000"
-                        autocomplete="tel"
-                    >
-                </div>
-            </div>
+        <div class="campo">
+            <label for="telefono">Teléfono</label>
+            <input
+                type="tel"
+                id="telefono"
+                name="Telefono"
+                placeholder="+502 0000-0000"
+            >
+        </div>
+    </div>
 
-            <hr class="divider">
+    <hr class="divider">
 
-            <!-- SECCIÓN: Mensaje -->
-            <p class="seccion-titulo">Tu mensaje</p>
+    <!-- SECCIÓN: Mensaje -->
+    <p class="seccion-titulo">Tu mensaje</p>
 
-            <div class="campo">
-                <label for="asunto">Asunto <span class="req">*</span></label>
-                <select id="asunto" name="asunto">
-                    <option value="">-- Selecciona un asunto --</option>
-                    <option value="proyecto">Propuesta de proyecto</option>
-                    <option value="colaboracion">Colaboración académica</option>
-                    <option value="consulta">Consulta general</option>
-                    <option value="otro">Otro</option>
-                </select>
-                <span class="error-msg" id="err-asunto">Por favor selecciona un asunto.</span>
-            </div>
+    <div class="campo">
+        <label for="asunto">Asunto</label>
+        <select id="asunto" name="Asunto">
+            <option value="">-- Selecciona un asunto --</option>
+            <option value="Propuesta de proyecto">Propuesta de proyecto</option>
+            <option value="Colaboración académica">Colaboración académica</option>
+            <option value="Consulta general">Consulta general</option>
+            <option value="Otro">Otro</option>
+        </select>
+    </div>
 
-            <div class="campo">
-                <label for="mensaje">Mensaje <span class="req">*</span></label>
-                <textarea
-                    id="mensaje"
-                    name="mensaje"
-                    placeholder="Escribe tu mensaje aquí..."
-                    maxlength="1000"
-                ></textarea>
-                <span class="error-msg" id="err-mensaje">El mensaje no puede estar vacío.</span>
-            </div>
+    <div class="campo">
+        <label for="mensaje">Mensaje</label>
+        <textarea
+            id="mensaje"
+            name="Mensaje"
+            placeholder="Escribe tu mensaje aquí..."
+            maxlength="1000"
+        ></textarea>
+    </div>
 
-            <!-- Checkbox de autorización -->
-            <div class="campo-check">
-                <input type="checkbox" id="autorizo" name="autorizo">
-                <label for="autorizo">
-                    Autorizo el uso de mis datos de contacto únicamente para recibir respuesta a este mensaje.
-                </label>
-            </div>
+    <!-- Botones -->
+    <div class="acciones">
+        <button type="submit" class="btn-enviar">
+            &#9993; Enviar mensaje
+        </button>
 
-            <!-- Botones -->
-            <div class="acciones">
-                <button type="submit" class="btn-enviar">&#9993; Enviar mensaje</button>
-                <button type="reset" class="btn-limpiar" onclick="limpiarFormulario()">&#10006; Limpiar</button>
-            </div>
+        <button type="reset" class="btn-limpiar">
+            &#10006; Limpiar
+        </button>
+    </div>
 
-        </form>
+</form>
 
             </table>
 
