@@ -2,7 +2,7 @@
 document.getElementById(contact-form). addEventListener('Submit', function(event){
     event.preventDefault();
 
-    const submitButton = this.querySelector(button['type="submit"]');
+    const submitButton = this.querySelector('button[type="submit"]');
     submitButton.classlist.add('loading');
 
     const formData = new FormData(this);
