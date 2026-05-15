@@ -3,7 +3,7 @@
    Estilo: Minimalista Elegante
    Paleta basada en diseño_Web1.png
    ============================================================ */
-
+ 
 /* ── Variables de color ──────────────────────────────────── */
 :root {
   --fondo:      #F5F5F4;
@@ -11,30 +11,30 @@
   --detalles:   #D6B36A;
   --gris:       #78716C;
   --tarjetas:   #FFFFFF;
-
+ 
   --detalles-hover: #c4a055;
   --borde:      #E7E5E4;
   --sombra:     0 4px 24px rgba(28, 25, 23, 0.08);
-
+ 
   --fuente-display: 'Playfair Display', Georgia, serif;
   --fuente-body:    'DM Sans', 'Segoe UI', sans-serif;
-
+ 
   --radio:   10px;
   --transicion: 0.25s ease;
 }
-
+ 
 /* ── Reset + base ────────────────────────────────────────── */
 *, *::before, *::after {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
 }
-
+ 
 html {
   font-size: 16px;
   scroll-behavior: smooth;
 }
-
+ 
 body {
   background-color: var(--fondo);
   color: var(--texto);
@@ -43,10 +43,10 @@ body {
   line-height: 1.65;
   -webkit-font-smoothing: antialiased;
 }
-
+ 
 /* ── Google Fonts import ─────────────────────────────────── */
 @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=DM+Sans:wght@300;400;500&display=swap');
-
+ 
 /* ── Tipografía ──────────────────────────────────────────── */
 h1, h2, h3, h4 {
   font-family: var(--fuente-display);
@@ -54,28 +54,28 @@ h1, h2, h3, h4 {
   line-height: 1.2;
   margin-bottom: 0.5em;
 }
-
+ 
 h1 { font-size: clamp(2rem, 5vw, 3rem); font-weight: 700; }
 h2 { font-size: clamp(1.4rem, 3vw, 2rem); font-weight: 600; }
 h3 { font-size: 1.2rem; font-weight: 600; }
-
+ 
 p {
   color: var(--gris);
   margin-bottom: 1em;
   max-width: 65ch;
 }
-
+ 
 a {
   color: var(--detalles);
   text-decoration: none;
   transition: color var(--transicion);
 }
-
+ 
 a:hover {
   color: var(--detalles-hover);
   text-decoration: underline;
 }
-
+ 
 /* ── Layout principal ────────────────────────────────────── */
 .contenedor,
 .container {
@@ -84,12 +84,12 @@ a:hover {
   margin-inline: auto;
   padding: 2rem 0;
 }
-
+ 
 center {
   display: block;
   text-align: center;
 }
-
+ 
 /* ── Barra de navegación ─────────────────────────────────── */
 nav {
   background-color: var(--tarjetas);
@@ -104,7 +104,7 @@ nav {
   z-index: 100;
   box-shadow: 0 2px 8px rgba(28,25,23,0.06);
 }
-
+ 
 nav a {
   font-size: 0.875rem;
   font-weight: 500;
@@ -115,13 +115,13 @@ nav a {
   text-decoration: none;
   white-space: nowrap;
 }
-
+ 
 nav a:hover {
   background-color: var(--fondo);
   color: var(--detalles);
   text-decoration: none;
 }
-
+ 
 /* ── Encabezado de página (h1 principal) ─────────────────── */
 body > h1:first-of-type,
 body > center:first-of-type h1 {
@@ -129,7 +129,7 @@ body > center:first-of-type h1 {
   padding: 3rem 1rem 1rem;
   letter-spacing: -0.02em;
 }
-
+ 
 body > h1:first-of-type::after {
   content: '';
   display: block;
@@ -139,7 +139,7 @@ body > h1:first-of-type::after {
   margin: 0.6rem auto 0;
   border-radius: 2px;
 }
-
+ 
 /* ── Tarjetas / Cards ────────────────────────────────────── */
 .card {
   background: var(--tarjetas);
@@ -151,23 +151,22 @@ body > h1:first-of-type::after {
   box-shadow: var(--sombra);
   transition: box-shadow var(--transicion), transform var(--transicion);
 }
-
+ 
 .card:hover {
   box-shadow: 0 8px 32px rgba(214, 179, 106, 0.18);
   transform: translateY(-3px);
 }
-
+ 
 /* ── Sección de proyecto ─────────────────────────────────── */
 body > center {
   padding: 1rem;
 }
-
+ 
 body > center h1,
 body > center h2 {
   margin-top: 2rem;
 }
-
-/* Descripción / etiqueta dorada */
+ 
 body > center > p,
 center > p {
   color: var(--gris);
@@ -175,13 +174,12 @@ center > p {
   max-width: 680px;
   margin-inline: auto;
 }
-
-/* Pequeña etiqueta tipo badge antes del título */
+ 
 center > h2::before {
   content: '— ';
   color: var(--detalles);
 }
-
+ 
 /* ── Tabla de cursos ─────────────────────────────────────── */
 table {
   width: 100%;
@@ -193,11 +191,11 @@ table {
   overflow: hidden;
   box-shadow: var(--sombra);
 }
-
+ 
 table[border] {
   border: none;
 }
-
+ 
 th {
   background-color: var(--texto);
   color: var(--tarjetas);
@@ -208,28 +206,27 @@ th {
   padding: 0.85rem 1.2rem;
   text-align: left;
 }
-
+ 
 td {
   padding: 0.8rem 1.2rem;
   border-bottom: 1px solid var(--borde);
   font-size: 0.9rem;
   color: var(--texto);
 }
-
+ 
 tr:last-child td {
   border-bottom: none;
 }
-
+ 
 tr:hover td {
   background-color: #faf9f8;
 }
-
-/* Porcentaje de dominio — coloreado con detalles */
+ 
 td:nth-child(3) {
   color: var(--detalles);
   font-weight: 600;
 }
-
+ 
 /* ── Imagen de perfil ────────────────────────────────────── */
 img {
   display: block;
@@ -242,7 +239,7 @@ img {
   width: 100%;
   height: auto;
 }
-
+ 
 /* ── Video ───────────────────────────────────────────────── */
 video {
   display: block;
@@ -253,52 +250,203 @@ video {
   box-shadow: var(--sombra);
   border: 1px solid var(--borde);
 }
-
-/* ── Botones (por si se agregan) ─────────────────────────── */
-button,
-.btn {
-  display: inline-block;
-  padding: 0.65rem 1.6rem;
-  border-radius: 6px;
-  font-family: var(--fuente-body);
-  font-size: 0.9rem;
-  font-weight: 500;
-  cursor: pointer;
-  border: none;
-  transition: background var(--transicion), transform var(--transicion);
+ 
+/* ═══════════════════════════════════════════════════════════
+   FORMULARIO DE CONTACTO — ESTILO TABLA
+   ═══════════════════════════════════════════════════════════ */
+ 
+form {
+  width: 100%;
+  max-width: 700px;
+  margin: 2rem auto;
+  background: var(--tarjetas);
+  border-radius: var(--radio);
+  box-shadow: var(--sombra);
+  overflow: hidden;
+  border: 1px solid var(--borde);
 }
-
-.btn-primario,
-button {
+ 
+/* Cabecera del formulario */
+form::before {
+  content: '✉  Formulario de contacto';
+  display: block;
+  background-color: var(--texto);
+  color: var(--tarjetas);
+  font-family: var(--fuente-display);
+  font-size: 0.95rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  padding: 0.85rem 1.4rem;
+}
+ 
+/* Título de sección (p.seccion-titulo) */
+.seccion-titulo {
+  background-color: var(--fondo);
+  color: var(--detalles);
+  font-family: var(--fuente-display);
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  padding: 0.55rem 1.4rem;
+  border-top: 1px solid var(--borde);
+  border-bottom: 1px solid var(--borde);
+  margin: 0;
+  max-width: none;
+}
+ 
+/* Grid de dos columnas (fila-dos) */
+.fila-dos {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  border-bottom: 1px solid var(--borde);
+}
+ 
+.fila-dos .campo {
+  border-bottom: none;
+}
+ 
+.fila-dos .campo:first-child {
+  border-right: 1px solid var(--borde);
+}
+ 
+/* Campo individual */
+.campo {
+  display: grid;
+  grid-template-columns: 160px 1fr;
+  align-items: stretch;
+  border-bottom: 1px solid var(--borde);
+  min-height: 52px;
+}
+ 
+.campo:last-child {
+  border-bottom: none;
+}
+ 
+/* Etiqueta — columna izquierda */
+.campo label {
+  display: flex;
+  align-items: center;
+  padding: 0.65rem 1rem 0.65rem 1.4rem;
+  background-color: var(--fondo);
+  border-right: 1px solid var(--borde);
+  font-size: 0.83rem;
+  font-weight: 500;
+  color: var(--texto);
+  white-space: nowrap;
+}
+ 
+.req {
+  color: var(--detalles);
+  margin-left: 3px;
+  font-size: 0.9rem;
+}
+ 
+/* Inputs, select, textarea — columna derecha */
+.campo input,
+.campo select,
+.campo textarea {
+  width: 100%;
+  padding: 0.65rem 1rem;
+  border: none;
+  outline: none;
+  background: var(--tarjetas);
+  font-family: var(--fuente-body);
+  font-size: 0.88rem;
+  color: var(--texto);
+  transition: background var(--transicion);
+  resize: none;
+}
+ 
+.campo input::placeholder,
+.campo textarea::placeholder {
+  color: #b9b3ae;
+}
+ 
+.campo input:focus,
+.campo select:focus,
+.campo textarea:focus {
+  background-color: #fffdf7;
+  box-shadow: inset 3px 0 0 var(--detalles);
+}
+ 
+.campo textarea {
+  min-height: 110px;
+  line-height: 1.55;
+  resize: vertical;
+}
+ 
+.campo select {
+  cursor: pointer;
+  appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%2378716C' stroke-width='1.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 1rem center;
+  padding-right: 2.5rem;
+}
+ 
+/* Separador */
+hr.divider {
+  border: none;
+  border-top: 1px solid var(--borde);
+  margin: 0;
+  max-width: none;
+}
+ 
+/* Fila de botones */
+.acciones {
+  display: flex;
+  gap: 0.75rem;
+  justify-content: flex-end;
+  padding: 1rem 1.4rem;
+  background-color: var(--fondo);
+  border-top: 1px solid var(--borde);
+}
+ 
+.btn-enviar {
   background-color: var(--detalles);
   color: var(--tarjetas);
+  border: none;
+  padding: 0.6rem 1.4rem;
+  border-radius: 6px;
+  font-family: var(--fuente-body);
+  font-size: 0.88rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background var(--transicion), transform var(--transicion);
 }
-
-.btn-primario:hover,
-button:hover {
+ 
+.btn-enviar:hover {
   background-color: var(--detalles-hover);
   transform: translateY(-2px);
 }
-
-.btn-secundario {
+ 
+.btn-limpiar {
   background-color: transparent;
+  color: var(--gris);
+  border: 1.5px solid var(--borde);
+  padding: 0.6rem 1.2rem;
+  border-radius: 6px;
+  font-family: var(--fuente-body);
+  font-size: 0.88rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: border-color var(--transicion), color var(--transicion);
+}
+ 
+.btn-limpiar:hover {
+  border-color: var(--gris);
   color: var(--texto);
-  border: 1.5px solid var(--texto);
 }
-
-.btn-secundario:hover {
-  background-color: var(--texto);
-  color: var(--tarjetas);
-}
-
-/* ── Separador decorativo ────────────────────────────────── */
+ 
+/* ── Separador decorativo (fuera del form) ───────────────── */
 hr {
   border: none;
   border-top: 1px solid var(--borde);
   margin: 2.5rem auto;
   max-width: 700px;
 }
-
+ 
 /* ── Pie de página ───────────────────────────────────────── */
 footer {
   background-color: var(--texto);
@@ -308,40 +456,77 @@ footer {
   font-size: 0.85rem;
   margin-top: 4rem;
 }
-
+ 
 footer a {
   color: var(--detalles);
 }
-
+ 
 /* ── Animación de entrada suave ──────────────────────────── */
 @keyframes fadeUp {
   from { opacity: 0; transform: translateY(18px); }
   to   { opacity: 1; transform: translateY(0); }
 }
-
+ 
 h1, h2, .card, video, table {
   animation: fadeUp 0.55s ease both;
 }
-
+ 
 /* ── Responsive ──────────────────────────────────────────── */
 @media (max-width: 640px) {
   nav {
     padding: 0.75rem 1rem;
     justify-content: center;
   }
-
+ 
   nav a {
     font-size: 0.8rem;
     padding: 0.3rem 0.55rem;
   }
-
+ 
   table th,
   table td {
     padding: 0.65rem 0.8rem;
     font-size: 0.82rem;
   }
-
+ 
   img {
     max-width: 220px;
+  }
+ 
+  /* Formulario responsive */
+  .fila-dos {
+    grid-template-columns: 1fr;
+  }
+ 
+  .fila-dos .campo:first-child {
+    border-right: none;
+    border-bottom: 1px solid var(--borde);
+  }
+ 
+  .campo {
+    grid-template-columns: 1fr;
+  }
+ 
+  .campo label {
+    padding: 0.5rem 1rem;
+    border-right: none;
+    border-bottom: 1px solid var(--borde);
+    background-color: var(--fondo);
+  }
+ 
+  .campo input,
+  .campo select,
+  .campo textarea {
+    padding: 0.6rem 1rem;
+  }
+ 
+  .acciones {
+    flex-direction: column;
+  }
+ 
+  .btn-enviar,
+  .btn-limpiar {
+    width: 100%;
+    text-align: center;
   }
 }
