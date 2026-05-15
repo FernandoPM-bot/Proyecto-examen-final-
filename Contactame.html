@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contacto</title>
+</head>
+<body>
+    <section id="contacto" class="contact-section">
+        <h2>Contacto</h2>
+        <form id="contact-form" method="post" action="/send_email">
+            <input type="text" name="nombre" placeholder="Nombre" required>
+            <input type="email" name="correo" placeholder="Correo Electrónico" required>
+            <textarea name="mensaje" placeholder="Mensaje"> required</textarea>
+            <button type="submit">Enviar</button>
+        </form>
+    </section>
+    <!-- Contenedor para mensajes flash -->
+     <div id="flash-messages" class="flash-messages"></div>
+</body>
+</html>
