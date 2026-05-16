@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portafolio Personal</title>
+    <link rel="stylesheet" href="./normalize_2.css">
+</head>
+<body>
+<header style="background:#f2f1f1; color:white; text-align:center; padding:20px;">
+    <h1>Mi Portafolio Personal</h1>
+    <p>Fernando Baudilio Alexander Portillo Méndez</p>
+</header>
+
+   <nav>
+        <a href="Proyecto-Desarrollo-Humano.html">Proyecto Desarrollo Humano</a>
+    <a href="Proyecto-logica-de-sistemas.html">Proyecto de lógica de Sistemas</a>
+    <a href="Proyecto-ContabilidadI.html">Proyecto de Proyecto Contabilidad I</a>
+    <a href="Proyecto-metodologia-de-la-investigacion.html">Proyecto Metodología de la Investigación</a>
+    <a href="Proyecto-Introduccion-los-sistemas-1.html">Proyecto 1 de Introducción a los Sistemas</a>
+
+   </nav>
+<h1>Portafolio Fernando Baudilio Alexander Portillo Méndez</h1>
+        <div class="card">
+            <h2>Un poco más de mi.</h2>
+        <p> Mi nombre es Fernando Baudilio Alexander Portillo Méndez, soy de Guatemala y actualmente curso el pimer semestre de Ingeniería 
+            en Sistemas, escogí esta carrera porque me gusta mucho la tecnología y se que tengo la capacidad y el potencial de poder lograr 
+            grandes cosas en el futuro.</p>
+
+        <p>He recibido algunas capacitaciones, una de las más recientes fue un curso de Cisco Packet Tracer.</p>
+        <p>Me he capacitado en otras áreas tales como natación, bombero voluntario, entrenamiento militar, entre otros.</p>
+        <p></p>
+
+            </table>
+        </div>
+        <center>
+        <img src="Foto mía.jpeg" alt="700px" height="700px">
+        </center>
+
+            <table border="1">
+            <tr>
+                <th>#</th>
+                <th>Curso</th>
+                <th>Curso</th>
+                <th>Tipo de proyecto</th>
+            </tr>
+
+            <center><h2>Resumen de cursos y porcentajes de dominio</h2></center>
+
+            <tr>
+                <td>1</td>
+                <td>Desarrollo Humano</td>
+                <td>85%</td>
+                <td>Grupal</td>
+            </tr>    
+            <tr>
+                <td>2</td>
+                <td>Contabilidad I</td>
+                <td>63%</td>
+                <td>Grupal</td>
+            </tr>
+            <tr>
+                <td>3</td>
+                <td>Metodología de la Investigación</td>
+                <td>80%</td>
+                <td>Grupal</td>
+            </tr>
+            <tr>
+                <td>4</td>
+                <td>Logica de Sistemas</td>
+                <td>70%</td>
+                <td>Individual</td>
+            </tr>
+                <tr>
+                <td>5</td>
+                <td>Introducción a los Sistemas de Cómputo</td>
+                <td>75%</td>
+                <td>Individual</td>
+            </tr>
+            <table>
+<form onsubmit="enviarCorreo(event)">
+
+    <input type="text" id="nombre" placeholder="Tu nombre" required>
+    <br><br>
+
+    <input type="email" id="correo" placeholder="Tu correo" required>
+    <br><br>
+
+    <input type="text" id="asunto" placeholder="Asunto" required>
+    <br><br>
+
+    <textarea id="mensaje" placeholder="Escribe tu mensaje" required></textarea>
+    <br><br>
+
+    <button type="submit">
+        Enviar mensaje
+    </button>
+
+</form>
+
+<script>
+function enviarCorreo(event) {
+
+    event.preventDefault();
+
+    let nombre = document.getElementById("nombre").value;
+    let correo = document.getElementById("correo").value;
+    let asunto = document.getElementById("asunto").value;
+    let mensaje = document.getElementById("mensaje").value;
+
+    let destino = "fportillom1@miumg.edu.gt";
+
+    let link = `https://mail.google.com/mail/?view=cm&fs=1&to=${destino}&su=${encodeURIComponent(asunto)}&body=${encodeURIComponent(
+        "Nombre: " + nombre +
+        "\nCorreo: " + correo +
+        "\n\nMensaje:\n" + mensaje
+    )}`;
+
+    window.open(link, "_blank");
+}
+</script>
+
+            </table>
+
+<footer style="background:#333; color:white; text-align:center; padding:15px; margin-top:30px;">
+    <p>&copy; 2026 Fernando Baudilio Alexander Portillo Méndez | Todos los derechos reservados</p>
+</footer>
+
+</body>
+</html>
