@@ -255,18 +255,23 @@ video {
    FORMULARIO DE CONTACTO — ESTILO TABLA
    ═══════════════════════════════════════════════════════════ */
  
+/* ═══════════════════════════════════════════════════════════
+   FORMULARIO DE CONTACTO — ESTILO FORMAL (solo CSS, sin tocar HTML)
+   ═══════════════════════════════════════════════════════════ */
+ 
 form {
-  width: 100%;
+  width: 90%;
   max-width: 700px;
-  margin: 2rem auto;
+  margin: 3rem auto;
   background: var(--tarjetas);
   border-radius: var(--radio);
   box-shadow: var(--sombra);
-  overflow: hidden;
   border: 1px solid var(--borde);
+  overflow: hidden;
+  animation: fadeUp 0.55s ease both;
 }
  
-/* Cabecera del formulario */
+/* Cabecera oscura del formulario */
 form::before {
   content: '✉  Formulario de contacto';
   display: block;
@@ -276,7 +281,112 @@ form::before {
   font-size: 0.95rem;
   letter-spacing: 0.06em;
   text-transform: uppercase;
-  padding: 0.85rem 1.4rem;
+  padding: 0.9rem 1.5rem;
+}
+ 
+/* Ocultar <br> — el espaciado lo dan los inputs */
+form br {
+  display: none;
+}
+ 
+/* Todos los inputs y textarea */
+form input[type="text"],
+form input[type="email"],
+form textarea {
+  display: block;
+  width: 100%;
+  padding: 0.85rem 1.5rem;
+  border: none;
+  border-bottom: 1px solid var(--borde);
+  outline: none;
+  background: var(--tarjetas);
+  font-family: var(--fuente-body);
+  font-size: 0.9rem;
+  color: var(--texto);
+  box-sizing: border-box;
+  transition: background var(--transicion), box-shadow var(--transicion);
+}
+ 
+/* Separador visual — franja dorada como "subtítulo de sección" */
+/* Primer input (nombre) — cabecera de sección "Datos" */
+form input[type="text"]:first-of-type {
+  border-top: 3px solid var(--detalles);
+  background-color: var(--fondo);
+}
+ 
+/* Segundo input de texto (asunto) — inicio de sección "Mensaje" */
+form input[type="text"]:last-of-type {
+  border-top: 3px solid var(--detalles);
+  background-color: var(--fondo);
+}
+ 
+/* Placeholders como etiquetas */
+form input[type="text"]::placeholder,
+form input[type="email"]::placeholder,
+form textarea::placeholder {
+  color: var(--gris);
+  font-size: 0.85rem;
+  font-style: italic;
+  letter-spacing: 0.01em;
+}
+ 
+/* Foco con línea lateral dorada */
+form input[type="text"]:focus,
+form input[type="email"]:focus,
+form textarea:focus {
+  background-color: #fffdf7;
+  box-shadow: inset 4px 0 0 var(--detalles);
+  outline: none;
+}
+ 
+/* Email sin borde superior especial */
+form input[type="email"] {
+  border-bottom: 1px solid var(--borde);
+}
+ 
+/* Textarea — área de mensaje */
+form textarea {
+  min-height: 130px;
+  line-height: 1.65;
+  resize: vertical;
+  border-bottom: none;
+  padding-top: 1rem;
+}
+ 
+/* Franja inferior antes del botón */
+form::after {
+  content: '';
+  display: block;
+  height: 1px;
+  background: var(--borde);
+}
+ 
+/* Botón de envío */
+form button[type="submit"] {
+  display: block;
+  margin: 1.2rem 1.5rem 1.5rem auto;
+  padding: 0.7rem 2rem;
+  background-color: var(--detalles);
+  color: var(--tarjetas);
+  border: none;
+  border-radius: 6px;
+  font-family: var(--fuente-body);
+  font-size: 0.9rem;
+  font-weight: 500;
+  cursor: pointer;
+  letter-spacing: 0.04em;
+  transition: background var(--transicion), transform var(--transicion), box-shadow var(--transicion);
+}
+ 
+form button[type="submit"]:hover {
+  background-color: var(--detalles-hover);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 18px rgba(214, 179, 106, 0.35);
+}
+ 
+form button[type="submit"]:active {
+  transform: translateY(0);
+  box-shadow: none;
 }
  
 /* Título de sección (p.seccion-titulo) */
@@ -528,5 +638,18 @@ h1, h2, .card, video, table {
   .btn-limpiar {
     width: 100%;
     text-align: center;
+  }
+ 
+  /* Form nativo responsive */
+  form input[type="text"],
+  form input[type="email"],
+  form textarea {
+    padding: 0.65rem 1rem;
+    font-size: 0.86rem;
+  }
+ 
+  form button[type="submit"] {
+    width: calc(100% - 2rem);
+    margin: 1rem 1rem 1rem;
   }
 }

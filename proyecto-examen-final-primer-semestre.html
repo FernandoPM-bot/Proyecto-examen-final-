@@ -78,95 +78,47 @@
                 <td>Individual</td>
             </tr>
             <table>
-<form action="mailto:fportillom1@miumg.edu.gt" method="post" enctype="text/plain">
+<form onsubmit="enviarCorreo(event)">
 
-    <!-- SECCIÓN: Datos personales -->
-    <p class="seccion-titulo">Datos del remitente</p>
+    <input type="text" id="nombre" placeholder="Tu nombre" required>
+    <br><br>
 
-    <div class="fila-dos">
-        <div class="campo">
-            <label for="nombre">Nombre <span class="req">*</span></label>
-            <input
-                type="text"
-                id="nombre"
-                name="Nombre"
-                placeholder="Tu nombre"
-                maxlength="60"
-            >
-        </div>
+    <input type="email" id="correo" placeholder="Tu correo" required>
+    <br><br>
 
-        <div class="campo">
-            <label for="apellido">Apellido <span class="req">*</span></label>
-            <input
-                type="text"
-                id="apellido"
-                name="Apellido"
-                placeholder="Tu apellido"
-                maxlength="60"
-            >
-        </div>
-    </div>
+    <input type="text" id="asunto" placeholder="Asunto" required>
+    <br><br>
 
-    <div class="fila-dos">
-        <div class="campo">
-            <label for="correo">Correo electrónico <span class="req">*</span></label>
-            <input
-                type="email"
-                id="correo"
-                name="Correo"
-                placeholder="ejemplo@correo.com"
-            >
-        </div>
+    <textarea id="mensaje" placeholder="Escribe tu mensaje" required></textarea>
+    <br><br>
 
-        <div class="campo">
-            <label for="telefono">Teléfono</label>
-            <input
-                type="tel"
-                id="telefono"
-                name="Telefono"
-                placeholder="+502 0000-0000"
-            >
-        </div>
-    </div>
-
-    <hr class="divider">
-
-    <!-- SECCIÓN: Mensaje -->
-    <p class="seccion-titulo">Tu mensaje</p>
-
-    <div class="campo">
-        <label for="asunto">Asunto</label>
-        <select id="asunto" name="Asunto">
-            <option value="">-- Selecciona un asunto --</option>
-            <option value="Propuesta de proyecto">Propuesta de proyecto</option>
-            <option value="Colaboración académica">Colaboración académica</option>
-            <option value="Consulta general">Consulta general</option>
-            <option value="Otro">Otro</option>
-        </select>
-    </div>
-
-    <div class="campo">
-        <label for="mensaje">Mensaje</label>
-        <textarea
-            id="mensaje"
-            name="Mensaje"
-            placeholder="Escribe tu mensaje aquí..."
-            maxlength="1000"
-        ></textarea>
-    </div>
-
-    <!-- Botones -->
-    <div class="acciones">
-        <button type="submit" class="btn-enviar">
-            &#9993; Enviar mensaje
-        </button>
-
-        <button type="reset" class="btn-limpiar">
-            &#10006; Limpiar
-        </button>
-    </div>
+    <button type="submit">
+        Enviar mensaje
+    </button>
 
 </form>
+
+<script>
+function enviarCorreo(event) {
+
+    event.preventDefault();
+
+    let nombre = document.getElementById("nombre").value;
+    let correo = document.getElementById("correo").value;
+    let asunto = document.getElementById("asunto").value;
+    let mensaje = document.getElementById("mensaje").value;
+
+    let destino = "fportillom1@miumg.edu.gt";
+
+    let link = `https://mail.google.com/mail/?view=cm&fs=1&to=${destino}&su=${encodeURIComponent(asunto)}&body=${encodeURIComponent(
+        "Nombre: " + nombre +
+        "\nCorreo: " + correo +
+        "\n\nMensaje:\n" + mensaje
+    )}`;
+
+    window.open(link, "_blank");
+}
+</script>
 
             </table>
 
